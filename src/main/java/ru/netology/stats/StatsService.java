@@ -3,8 +3,11 @@ package ru.netology.stats;
 public class StatsService {
 
     public int calculateTotalSales(int[] salesData) {
+
         int total = 0;
+
         for (int sale : salesData) total += sale;
+
         return total;
     }
 
@@ -13,6 +16,7 @@ public class StatsService {
     }
 
     public int calculateMonthMaxSalesNumber(int[] salesData) {
+
         int monthMaxSales = salesData[0];
         int monthMaxSalesNumber = 0;
         int monthCurrent = 0;
@@ -24,6 +28,7 @@ public class StatsService {
                 monthMaxSalesNumber = monthCurrent;
             }
         }
+
         return monthMaxSalesNumber;
     }
 

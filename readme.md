@@ -23,7 +23,7 @@
  
 4. На каждый метод создано по одному автотесту, который проверяет правильность работы на тестовых данных.
 
-5. Исходные данные передаются с помощью @CSVSource в виде двух строк: значения сумм продаж по месяцам через запятую и ожидаемое значение, которое должен возвращать метод.
+5. Исходные данные передаются с помощью @CSVSource: значения сумм продаж по месяцам (в виде строки, с разделителем - запятая) и ожидаемое значение, которое должен возвращать метод.
     
 6. Для преобразования строковых значений исходных параметров в массив целых чисел написан метод:
     ### Код:
@@ -33,10 +33,12 @@ public int[] makeSalesDataArray(String csvSourceData) {
 
         String[] stringSalesDataArray = csvSourceData.split(",");
         int[] salesDataArray = new int[stringSalesDataArray.length];
+
         for (int index = 0; index < stringSalesDataArray.length; index++) {
             String numberAsString = stringSalesDataArray[index];
             salesDataArray[index] = Integer.parseInt(numberAsString.trim());
         }
+        
         return salesDataArray;
     }
 ```
@@ -49,7 +51,7 @@ public int[] makeSalesDataArray(String csvSourceData) {
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running ru.netology.stats.StatsServiceTest
-[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.121 s - in ru.netology.stats.StatsServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 s - in ru.netology.stats.StatsServiceTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -58,7 +60,7 @@ public int[] makeSalesDataArray(String csvSourceData) {
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  11.359 s
-[INFO] Finished at: 2020-05-16T16:36:26+07:00
+[INFO] Total time:  4.247 s
+[INFO] Finished at: 2020-05-16T19:21:57+07:00
 [INFO] ------------------------------------------------------------------------
 ```

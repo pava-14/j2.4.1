@@ -16,10 +16,12 @@ class StatsServiceTest {
 
         String[] stringSalesDataArray = csvSourceData.split(",");
         int[] salesDataArray = new int[stringSalesDataArray.length];
+
         for (int index = 0; index < stringSalesDataArray.length; index++) {
             String numberAsString = stringSalesDataArray[index];
             salesDataArray[index] = Integer.parseInt(numberAsString.trim());
         }
+
         return salesDataArray;
     }
 
@@ -53,6 +55,7 @@ class StatsServiceTest {
     // Устанавливаем читаемое название выполняемого теста
     @DisplayName("CalculateAverageSales must be equal 15")
     void shouldCalculateAverageSales(String csvSalesData, int expected) {
+
         StatsService service = new StatsService();
         // Формируем массив двнных о продажах из строки параметров
         int[] salesData = makeSalesDataArray(csvSalesData);
@@ -73,6 +76,7 @@ class StatsServiceTest {
     // Устанавливаем читаемое название выполняемого теста
     @DisplayName("CalculateMonthMaxSalesNumber must be equal 8")
     void shouldCalculateMonthMaxSalesNumber(String csvSalesData, int expected) {
+
         StatsService service = new StatsService();
         // Формируем массив двнных о продажах из строки параметров
         int[] salesData = makeSalesDataArray(csvSalesData);
@@ -93,6 +97,7 @@ class StatsServiceTest {
     // Устанавливаем читаемое название выполняемого теста
     @DisplayName("CalculateMonthMinSalesNumber must be equal 9")
     void shouldCalculateMonthMinSalesNumber(String csvSalesData, int expected) {
+
         StatsService service = new StatsService();
         // Формируем массив двнных о продажах из строки параметров
         int[] salesData = makeSalesDataArray(csvSalesData);
@@ -113,6 +118,7 @@ class StatsServiceTest {
     // Устанавливаем читаемое название выполняемого теста
     @DisplayName("CalculateMonthCountUnderAverageSales must be equal 5")
     void shouldCalculateMonthCountUnderAverageSales(String csvSalesData, int expected) {
+
         StatsService service = new StatsService();
         // Формируем массив двнных о продажах из строки параметров
         int[] salesData = makeSalesDataArray(csvSalesData);
@@ -133,6 +139,7 @@ class StatsServiceTest {
     // Устанавливаем читаемое название выполняемого теста
     @DisplayName("CalculateMonthCountOverAverageSales must be equal 5")
     void shouldCalculateMonthCountOverAverageSales(String csvSalesData, int expected) {
+
         StatsService service = new StatsService();
         // Формируем массив двнных о продажах из строки параметров
         int[] salesData = makeSalesDataArray(csvSalesData);
