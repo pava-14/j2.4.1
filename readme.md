@@ -42,7 +42,7 @@ public int[] makeSalesDataArray(String csvSourceData) {
 ```
 7. Выполнен прогон тестов:
 
-###Лог:
+    ### Лог:
 
 ```$xslt
 [INFO] -------------------------------------------------------
